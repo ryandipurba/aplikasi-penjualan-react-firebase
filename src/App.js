@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Router } from "@reach/router";
 import './App.css';
+import Login from './pages/login';
+import Registrasi from './pages/registrasi';
+import LupaPassword from './pages/lupa-password';
+import NotFound from './pages/404';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Login path="/login" />
+        <Registrasi path="registrasi" />
+        <LupaPassword path="lupa-password" />
+        <NotFound default />
+
+      </Router>
     </div>
   );
 }
